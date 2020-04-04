@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let item of nav">
+        <!-- <a href="/" *ngIf=!item.menu_route>
+            <img src="{{item.menu_icon.url}}" alt="{{item.menu_icon.alt}}">
+            <span>{{item.title}}</span>
+        </a> -->
+        <a routerLink="{{item.menu_route}}" routerLinkActive="active">
+            <img src="{{item.menu_icon.url}}" alt="{{item.menu_icon.alt}}">
+            <span>{{item.title}}</span>
+        </a>
+    </li>
+</ul>

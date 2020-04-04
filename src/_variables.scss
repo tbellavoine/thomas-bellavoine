@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+
+/*
+|-----------------------
+| 	    VARIABLES
+|-----------------------
+|
+*/
+
+/*---------------------------------
+*  Urls vars
+*---------------------------------*/
+
+/*---------------------------------
+*  Colors Vars
+*---------------------------------*/
+$white: #fff;
+$black: #181818;
+$grey: #333333;
+$grey2: #202020;
+$lightgrey : #999999;
+
+$color1: #feb960;       // The MAIN site theme color
+$color2: #85d0c7;       // The SECOND site theme color
+
+
+/*---------------------------------
+ *  Various Vars
+ *---------------------------------*/
+
+// Animation time used for main transition in this site
+$animTime: .3s;
+
+/*---------------------------------
+ *  Basics
+ *---------------------------------*/
+
+// Fonts
+$font: 'Lato', 'Arial', sans-serif;
+$font2: 'Kaushan Script', cursive;
+$font3: 'Merriweather', serif;
+
+// Base Font Size, applied to body tag (13px is iso SP)
+$baseFontSize: 14px;
+
+// Headings. For font-size > use pixels, the mixins does the convertion to EM
+$H1FontSize: 72px;     $H1Color:$white;          $H1FontFamily:$font3;
+$H2FontSize: 42px;     $H2Color:$white;          $H2FontFamily:$font3;
+$H3FontSize: 26px;     $H3Color:$grey;           $H3FontFamily:$font;
+$H4FontSize: 20px;     $H4Color:$grey;           $H4FontFamily:$font;
+$H5FontSize: 16px;     $H5Color:$grey;           $H5FontFamily:$font;
+$H6FontSize: 14px;     $H6Color:$grey;           $H6FontFamily:$font;
+
+
+// Body text color
+$BodyTextColor: $white;
+
+// Links
+$linkDefault: $color1;
+$linkDefaulthover: $color1;
+
+/*---------------------------------
+ *  Structures
+ *---------------------------------*/
+
+// Site Width
+$siteWidth: 100%;

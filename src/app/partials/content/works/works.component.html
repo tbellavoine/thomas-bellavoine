@@ -1,0 +1,20 @@
+<section>
+    <div class="title">
+        <h2>{{title}}</h2>
+        <div class="description">
+            <p [innerHTML]="description"></p>
+        </div>
+    </div>
+    <ul id="hexGrid">
+        <li *ngFor="let work of works" class="hex">
+          <div class="hexIn">
+            <a class="hexLink" (click)="openDetails(work)">
+              <img *ngIf="work.better_featured_image" src="{{work.better_featured_image.source_url}}" alt="{{work.better_featured_image.alt}}" />
+              <h2>{{work.title.rendered}}</h2>
+              <p [innerHTML]="work.excerpt.rendered"></p>
+            </a>
+          </div>
+        </li>
+    </ul>
+    <pfo-works-details *ngIf="isDetails" (detailsClose)="closeDetails()" [work]="currentWork"></pfo-works-details>
+</section>

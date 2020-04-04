@@ -1,0 +1,45 @@
+<section>
+    <div class="title">
+        <h2 [innerHTML]="title"></h2>
+        <div class="description" [innerHTML]="description"></div>
+    </div>
+    <div id="informations">
+        <ul>
+            <li *ngIf="birthdate">
+                <span>{{birthdate['title']}}</span>
+                <span>{{birthdate['value']}}</span>
+            </li>
+            <li *ngIf="age">
+                <span>{{age['title']}}</span>
+                <span>{{age['value']}}</span>
+            </li>
+            <li *ngIf="adress">
+                <span>{{adress['title']}}</span>
+                <a href="https://www.google.fr/maps/place/{{birthdate['title']}}" target="blank">{{adress['value']}}</a>
+            </li>
+            <li *ngIf="degree">
+                <span>{{degree['title']}}</span>
+                <span>{{degree['value']}}</span>
+            </li>
+            <li *ngIf="school">
+                <span>{{school['title']}}</span>
+                <span>{{school['value']}}</span>
+            </li>
+            <li *ngIf="mail">
+                <span>{{mail['title']}}</span>
+                <a href="mailto:{{mail['value']}}">{{mail['value']}}</a>
+            </li>
+        </ul>
+    </div>
+    <div id="cv" class="d-flex">
+        <a href="{{cv['link']['url']}}" target="_blank">{{cv['title']}}</a>
+        <a routerLink="{{contact['link']}}" routerLinkActive="active">{{contact['title']}}</a>
+    </div>
+    <a class="btn-next" href="#skills">
+        &#10094;
+    </a>
+</section>
+<section id="skills">
+    <pfo-skills></pfo-skills>
+</section>
+

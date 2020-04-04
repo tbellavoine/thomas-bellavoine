@@ -1,0 +1,17 @@
+<div class="title">
+    <h2 [innerHTML]="title"></h2>
+    <div class="description" [innerHTML]="description"></div>
+</div>
+<ul id="hexGrid">
+    <li class="hex" *ngFor="let skill of skills">
+        <div class="hexIn">
+            <div class="hexLink">
+                <img src="{{skill.acf.icone.url}}" alt="{{skill.acf.icone.alt}}" />
+                <div class="content">
+                    <h3>{{skill.name}}</h3>
+                    <p *ngIf="skill.acf.value">{{skill.acf.value}}%</p>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

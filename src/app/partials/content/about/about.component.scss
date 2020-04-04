@@ -1,0 +1,118 @@
+@import "../../../../_variables.scss";
+
+section{
+    position:relative;
+    padding:100px 100px 100px 250px;
+    background:$grey2;
+    #informations{
+        padding:50px 0 0 0;
+        ul{
+            display:flex;
+            flex-wrap: wrap;
+            margin:0;
+            padding:0;
+            list-style: none;
+            li{
+                padding:20px;
+                margin:20px;
+                border:1px solid $grey;
+                span{
+                    font-weight: 700;
+                    + span,
+                    + a{
+                        position: relative;
+                        padding-left: 30px;
+                        margin-left:10px;
+                        font-weight: 200;
+                        &:before{
+                            content:"";
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:20px;
+                            height:1px;
+                            border-bottom:1px solid $color1;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    + a{
+                        color:$color1;
+                        text-decoration:none;
+                        &:after{
+                            content:"";
+                            position:absolute;
+                            top:100%;
+                            left:30px;
+                            width:0;
+                            height:1px;
+                            border-bottom:1px solid $color1;
+                            transition:all $animTime ease-in-out;
+                        }
+                        &:hover{
+                            &:after{
+                                width:calc(100% - 30px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #cv{
+        padding:50px 20px;
+        a{
+            margin-right:20px;
+            padding:20px;
+            background:$grey2;
+            border:1px solid $color1;
+            transition:all $animTime ease-in-out;
+            
+            &:hover{
+                text-decoration:none;
+                background:$color1;
+                color:$white;
+            }
+        }
+    }
+
+    .btn-next{
+        position: absolute;
+        left: 170px;
+        top:calc(100vh - 50px);
+        font-size:20px;
+        text-transform:uppercase;
+        transform: rotate(-90deg);
+        animation: arrows 1.6s linear infinite;
+        &:hover{
+            text-decoration:none;
+        }
+    }
+
+    &#skills{
+        min-height:100vh;
+        background:$black;
+    }
+}
+
+@keyframes arrows {
+    0% {
+        opacity:0;
+        transform:translateY(-10px) rotate(-90deg) ;
+    }
+    10%, 60% {
+        opacity:0.5;
+    }
+    30% {
+        opacity:1;
+        transform:translateY(0) rotate(-90deg) ;
+    }
+    70% {
+        opacity:0;
+        transform:translateY(5px) rotate(-90deg) ;
+    }
+    100% {
+        opacity:0;
+        transform:translateY(10px) rotate(-90deg) ;
+    }
+  }
