@@ -4,8 +4,11 @@ ul{
     display:flex;
     padding:0;
     list-style:none;
+    @include media-breakpoint-down(md) {
+       flex-direction:column;
+    }
     li{
-        padding:20px 5px;
+        padding:0 4px 30px 4px;
         a{
             svg{
                 width:25px;

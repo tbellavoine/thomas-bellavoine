@@ -5,6 +5,9 @@ section{
     padding:100px 50px 100px 250px;
     background:$grey2;
     min-height: 100vh;
+    @include media-breakpoint-down(md) {
+        padding:50px 50px 50px 115px;
+    }
     .title{
         padding-left:50px;
         border-left:2px solid $color1;
@@ -121,7 +124,7 @@ section{
     }
     
     /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
-    @media (min-width:1201px) { /* <- 5-4  hexagons per row */
+    @media (min-width:900px) { /* <- 5-4  hexagons per row */
     #hexGrid{
         padding-bottom: 4.4%
     }
@@ -130,18 +133,6 @@ section{
     }
     .hex:nth-child(9n+6){ /* first hexagon of even rows */
         margin-left:10%;  /* = width of .hex / 2  to indent even rows */
-    }
-    }
-    
-    @media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
-    #hexGrid{
-        padding-bottom: 5.5%
-    }
-    .hex {
-        width: 25%; /* = 100 / 4 */
-    }
-    .hex:nth-child(9n+6){ /* first hexagon of even rows */
-        margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
     }
     }
     

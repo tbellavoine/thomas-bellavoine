@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
+import { ActionsService } from '../../../shared/services/actions.service';
 
 @Component({
   selector: 'pfo-navigation',
@@ -8,9 +9,12 @@ import { ApiService } from '../../../shared/services/api.service';
 })
 export class NavigationComponent implements OnInit {
 
+  @ViewChild('menuIconToggle') iconToggle : ElementRef;
+
   nav : any;
 
-  constructor(private _http:ApiService) { }
+  constructor(private _http:ApiService,
+              public actionService:ActionsService) { }
 
   ngOnInit(){
     this._http.getNav()
@@ -19,4 +23,12 @@ export class NavigationComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(){
+    console.log('menuIconToggle',this.iconToggle)
+    this.iconToggle.nativeElement.addEventListener('click', () => {
+      console.log('click');
+      this.actionService.toggleMenu();
+    })
+  }
+  
 }

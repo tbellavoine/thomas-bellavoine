@@ -5,7 +5,9 @@ section{
     min-height: 100vh;
     padding:100px 50px 100px 250px;
     background:$grey2;
-
+    @include media-breakpoint-down(md) {
+        padding:50px 50px 50px 115px;
+    }
     .title{
         padding-left:50px;
         border-left:2px solid $color1;
@@ -29,10 +31,21 @@ section{
     }
 
     .mail-adress{
-        padding:100px 20px 20px 20px;
+        padding:100px 20px 20px 20px !important;
         a{
+            color:$color1;
             letter-spacing:5px;
-            font-size:60px;
+            font-size:55px;
+            @include media-breakpoint-down(lg) {
+                font-size:35px;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size:24px;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size:16px;
+                word-break: break-all;
+            }
             &:hover{
                 text-decoration:none;
             }
@@ -48,6 +61,8 @@ section{
             padding:0;
             list-style: none;
             li{
+                display:flex;
+                align-items:center;
                 padding:20px;
                 margin:20px;
                 border:1px solid $grey;

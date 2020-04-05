@@ -4,6 +4,9 @@ section{
     position:relative;
     padding:100px 50px 100px 250px;
     background:$grey2;
+    @include media-breakpoint-down(md) {
+        padding:50px 50px 50px 115px;
+    }
     #informations{
         padding:50px 0 0 0;
         ul{
@@ -13,6 +16,8 @@ section{
             padding:0;
             list-style: none;
             li{
+                display:flex;
+                align-items:center;
                 padding:20px;
                 margin:20px;
                 border:1px solid $grey;
@@ -61,13 +66,20 @@ section{
 
     #cv{
         padding:50px 20px;
+        @include media-breakpoint-down(xs) {
+            flex-direction:column;
+        }
         a{
             margin-right:20px;
             padding:20px;
             background:$grey2;
+            color:$color1;
             border:1px solid $color1;
             transition:all $animTime ease-in-out;
-            
+            @include media-breakpoint-down(xs) {
+                margin-right:0;
+                margin-top:20px;
+            }
             &:hover{
                 text-decoration:none;
                 background:$color1;
@@ -76,43 +88,8 @@ section{
         }
     }
 
-    .btn-next{
-        position: absolute;
-        left: 170px;
-        top:calc(100vh - 50px);
-        font-size:20px;
-        text-transform:uppercase;
-        transform: rotate(-90deg);
-        animation: arrows 1.6s linear infinite;
-        &:hover{
-            text-decoration:none;
-        }
-    }
-
     &#skills{
         min-height:100vh;
         background:$black;
     }
 }
-
-@keyframes arrows {
-    0% {
-        opacity:0;
-        transform:translateY(-10px) rotate(-90deg) ;
-    }
-    10%, 60% {
-        opacity:0.5;
-    }
-    30% {
-        opacity:1;
-        transform:translateY(0) rotate(-90deg) ;
-    }
-    70% {
-        opacity:0;
-        transform:translateY(5px) rotate(-90deg) ;
-    }
-    100% {
-        opacity:0;
-        transform:translateY(10px) rotate(-90deg) ;
-    }
-  }

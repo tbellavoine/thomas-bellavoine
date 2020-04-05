@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActionsService } from './shared/services/actions.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'thomas-bellavoine';
+  isactive:boolean;
+  
+  constructor(public actionService:ActionsService) { }
+
+  isActive(){
+    return this.actionService.openMenu;
+  }
 }

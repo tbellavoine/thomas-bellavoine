@@ -31,7 +31,7 @@ export class AboutComponent implements OnInit {
   getAboutFields(datas:any){
     datas.forEach(page => {
       if(page.slug === 'about'){
-        this.title = page.title.rendered;
+        this.title = page.acf.about_html_title;
         this.description = page.content.rendered;
         this.birthdate = page.acf.about_birthdate;
         this.age = page.acf.about_age;
@@ -41,6 +41,8 @@ export class AboutComponent implements OnInit {
         this.mail = page.acf.about_mail;
         this.cv = page.acf.about_cv;
         this.contact = page.acf.about_contact;
+        console.log('this.cv',this.cv);
+        console.log('page',page);
       }
     });
   }

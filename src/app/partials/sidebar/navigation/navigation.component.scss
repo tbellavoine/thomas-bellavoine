@@ -5,7 +5,7 @@ ul{
     li{
         position: relative;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin: 30px 0;
         a{
             display:inline-block;
@@ -27,7 +27,13 @@ ul{
                 transform: scaleX(0);
                 transform-origin: 0 50%;
                 transition:all $animTime ease-in-out;
-                border-left:1px solid $grey
+                border-left:1px solid $grey;
+                @include media-breakpoint-down(md) {
+                    position: static;
+                    display: inline-block;
+                    margin-left:15px;
+                    transform: scaleX(1);
+                }
             }
 
             &:hover{
