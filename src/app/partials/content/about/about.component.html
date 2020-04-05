@@ -32,12 +32,9 @@
         </ul>
     </div>
     <div id="cv" class="d-flex">
-        <a href="{{cv['link']['url']}}" target="_blank">{{cv['title']}}</a>
-        <a routerLink="{{contact['link']}}" routerLinkActive="active">{{contact['title']}}</a>
+        <a *ngIf="cv" href="{{cv['value']['url']}}" target="_blank">{{cv['title']}}</a>
+        <a *ngIf="contact" routerLink="{{contact['value']}}" routerLinkActive="active">{{contact['title']}}</a>
     </div>
-    <a class="btn-next" href="#skills">
-        &#10094;
-    </a>
 </section>
 <section id="skills">
     <pfo-skills></pfo-skills>

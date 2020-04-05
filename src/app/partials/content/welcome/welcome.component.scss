@@ -7,6 +7,9 @@ section{
     justify-content:center;
     min-height: 100vh;
     padding-left:150px;
+    @include media-breakpoint-down(md) {
+        padding-left:70px;
+    }
     &:before{
         content:"";
         position: absolute;
@@ -52,6 +55,10 @@ section{
             font-weight:200;
             line-height: 32px;
             letter-spacing:3px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size:40px;
         }
     }
     #hexagon-container{

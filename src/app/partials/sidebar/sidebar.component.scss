@@ -4,15 +4,33 @@ aside{
     position: fixed;
     left: 0;
     top: 0;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
     height: 100%;
     width: 150px;
     border-right: 1px solid #333;
     background:rgba(0,0,0,0.1);
     z-index: 999;
+    @include media-breakpoint-down(md) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 70px;
+        background:none;
+        transition:all 1s ease-in-out;
+    }
     a{
+        @include media-breakpoint-down(md) {
+            position:relative;
+            z-index:10;
+        }
         img{
             max-width:100px;
+            @include media-breakpoint-down(md) {
+                max-width:30px;
+            }
         }
     }
 }

@@ -1,200 +1,188 @@
 @import "../../../../_variables.scss";
 
 @keyframes border-radius {
-    0%{
-       border-radius:50%
-    }
-    90%{
-        border-radius:50%
-    }
-    100%{
-        border-radius:0
-    }
+	0%{
+		border-radius:50%
+	}
+	90%{
+		border-radius:50%
+	}
+	100%{
+		border-radius:0
+	}
 }
 
 .title{
-    padding-left:50px;
-    border-left:2px solid $color1;
-    .description{
-        font-size:18px;
-        letter-spacing:3px;
-        line-height:35px;
-        span{
-            color:$color1;
-            font-style:italic;
-        }
-    }
+	padding-left:50px;
+	border-left:2px solid $color1;
+	.description{
+		font-size:18px;
+		letter-spacing:3px;
+		line-height:35px;
+		span{
+			color:$color1;
+			font-style:italic;
+		}
+	}
 }
 #hexGrid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 100px 0 0 0;
-    font-size: 15px;
-    list-style-type: none;
-  }
-  
-  .hex {
-    position: relative;
-    visibility:hidden;
-    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    &::after{
-        content:'';
-        display:block;
-        padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
-    }
-  }
-  .hex{
-    cursor:pointer;
-    h3{
-        position:relative;
-        font-size:16px;
-        color:$white;
-        text-align:center;
-        font-weight:200;
-        visibility:visible;
-        z-index:5;
-        opacity:0;
-        margin:0;
-        transition:all $animTime ease-in-out;
-    }
-    &:hover{
-        h3{
-            top:-40px;
-            opacity:1;
-        }
-        .hexLink {
-            .content{
-                width: 105%;
-                height: 105%;
-                opacity:1;
-                animation: border-radius 0.3s ;
-                p{
-                  &:after{
-                    height:10px;
-                  }
-                }
-            }
-        }
-    }
-  }
-  .hexIn{
-    position: absolute;
-    width:96%;
-    padding-bottom: 110.851%; /* =  width / sin(60) */
-    margin:0 2%;
-    overflow: hidden;
-    visibility: hidden;
-    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-  }
-  .hexIn * {
-    position: absolute;
-    visibility: visible;
-    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-  }
-  .hexLink {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    background:$color1;
-    transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-    img{
-        width:50%;
-    }
-    .content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background:#151515;
-        opacity:0;
-        transition:all $animTime ease-in-out;
-        transform:translate(-50%,-50%);
-        *{
-            position:static;
-        }
-        p{
-            position:relative;
-            padding-top:30px;
-            color:$white;
-            font-size:25px;
-            font-family:$font3;
-            margin:0;
-            &:after{
-              content:"";
-              position:absolute;
-              top:10px;
-              left:50%;
-              height:0;
-              border-left:1px solid $color1;
-              transform:translateX(-50%);
-              transition:all $animTime ease-in-out forwards;
-          }
-        }
-    }
-  }
-  
-  /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
-  @media (min-width:1201px) { /* <- 5-4  hexagons per row */
-    #hexGrid{
-      padding-bottom: 4.4%
-    }
-    .hex {
-      width: 12%; /* = 100 / 5 */
-    }
-    .hex:nth-child(11n + 8){ /* first hexagon of even rows */
-      margin-left:6%;  /* = width of .hex / 2  to indent even rows */
-    }
-  }
-  
-  @media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
-    #hexGrid{
-      padding-bottom: 5.5%
-    }
-    .hex {
-      width: 25%; /* = 100 / 4 */
-    }
-    .hex:nth-child(7n+5){ /* first hexagon of even rows */
-      margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
-    }
-  }
-  
-  @media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
-    #hexGrid{
-      padding-bottom: 7.4%
-    }
-    .hex {
-      width: 33.333%; /* = 100 / 3 */
-    }
-    .hex:nth-child(5n+4){ /* first hexagon of even rows */
-      margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
-    }
-  }
-  
-  @media (max-width: 600px) { /* <- 2-1  hexagons per row */
-    #hexGrid{
-      padding-bottom: 11.2%
-    }
-    .hex {
-      width: 50%; /* = 100 / 3 */
-    }
-    .hex:nth-child(3n+3){ /* first hexagon of even rows */
-      margin-left:25%;  /* = width of .hex / 2  to indent even rows */
-    }
-  }
-  
-  @media (max-width: 400px) {
-      #hexGrid {
-          font-size: 13px;
-      }
-  }
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 100px 0 0 0;
+	font-size: 15px;
+	list-style-type: none;
+}
+	
+.hex {
+	position: relative;
+	visibility:hidden;
+	outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+	&::after{
+		content:'';
+		display:block;
+		padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+	}
+}
+.hex{
+	cursor:pointer;
+	h3{
+		position:relative;
+		font-size:16px;
+		color:$white;
+		text-align:center;
+		font-weight:200;
+		visibility:visible;
+		z-index:5;
+		opacity:0;
+		margin:0;
+		transition:all $animTime ease-in-out;
+	}
+	&:hover{
+		h3{
+			top:-40px;
+			opacity:1;
+		}
+		.hexLink {
+			.content{
+				width: 105%;
+				height: 105%;
+				opacity:1;
+				animation: border-radius 0.3s ;
+				p{
+					&:after{
+						height:10px;
+					}
+				}
+			}
+		}
+	}
+}
+.hexIn{
+	position: absolute;
+	width:96%;
+	padding-bottom: 110.851%; /* =  width / sin(60) */
+	margin:0 2%;
+	overflow: hidden;
+	visibility: hidden;
+	outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+	transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+}
+.hexIn * {
+	position: absolute;
+	visibility: visible;
+	outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	background:$color1;
+	transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+	img{
+		width:50%;
+	}
+	.content{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		top: 50%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		background:#151515;
+		opacity:0;
+		transition:all $animTime ease-in-out;
+		transform:translate(-50%,-50%);
+		*{
+				position:static;
+		}
+		p{
+			position:relative;
+			padding-top:30px;
+			color:$white;
+			font-size:25px;
+			font-family:$font3;
+			margin:0;
+			&:after{
+				content:"";
+				position:absolute;
+				top:10px;
+				left:50%;
+				height:0;
+				border-left:1px solid $color1;
+				transform:translateX(-50%);
+				transition:all $animTime ease-in-out forwards;
+			}
+		}
+	}
+}
+
+#hexGrid{
+	padding-bottom: 4.4%
+}
+.hex {
+	width: 12%; /* = 100 / 5 */
+}
+.hex:nth-child(11n + 8){ /* first hexagon of even rows */
+	margin-left:6%;  /* = width of .hex / 2  to indent even rows */
+}
+
+@include media-breakpoint-down(sm) { /* <- 4-3  hexagons per row */
+	#hexGrid{
+		padding-bottom: 5.5%
+	}
+	.hex {
+		width: 25%; /* = 100 / 4 */
+	}
+	.hex:nth-child(11n + 8){ /* first hexagon of even rows */
+		margin-left:0;  /* = width of .hex / 2  to indent even rows */
+	}
+	.hex:nth-child(7n+5){ /* first hexagon of even rows */
+		margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+	}
+}
+
+@include media-breakpoint-down(xs) {  /* <- 3-2  hexagons per row */
+	#hexGrid{
+		padding-bottom: 7.4%
+	}
+	.hex {
+		width: 33.333%; /* = 100 / 3 */
+	}
+	.hex:nth-child(11n + 8){ /* first hexagon of even rows */
+		margin-left:0;  /* = width of .hex / 2  to indent even rows */
+	}
+	.hex:nth-child(7n+5){ /* first hexagon of even rows */
+		margin-left:0;  /* = width of .hex / 2  to indent even rows */
+	}
+	.hex:nth-child(5n+4){ /* first hexagon of even rows */
+		margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
+	}
+}

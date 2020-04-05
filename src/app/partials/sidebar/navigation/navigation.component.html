@@ -1,12 +1,14 @@
-<ul>
-    <li *ngFor="let item of nav">
-        <!-- <a href="/" *ngIf=!item.menu_route>
-            <img src="{{item.menu_icon.url}}" alt="{{item.menu_icon.alt}}">
-            <span>{{item.title}}</span>
-        </a> -->
-        <a routerLink="{{item.menu_route}}" routerLinkActive="active">
-            <img src="{{item.menu_icon.url}}" alt="{{item.menu_icon.alt}}">
-            <span>{{item.title}}</span>
-        </a>
-    </li>
-</ul>
+<nav class="menu-navigation">
+    <a class="menu-icon-toggle" #menuIconToggle><span></span></a>
+    <i class="menu-background top"></i>
+    <i class="menu-background middle"></i>
+    <i class="menu-background bottom"></i>
+    <ul class="menu">
+        <li *ngFor="let item of nav">
+            <a routerLink="{{item.menu_route}}" routerLinkActive="active" (click)="actionService.toggleMenu()">
+                <img src="{{item.menu_icon.url}}" alt="{{item.menu_icon.alt}}">
+                <span>{{item.title}}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
