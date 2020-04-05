@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
 
   constructor(private _http:ApiService) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
     this._http.getPages()
       .subscribe((datas) => {
         this.getHomeFields(datas);

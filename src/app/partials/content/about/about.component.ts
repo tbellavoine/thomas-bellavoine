@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
 
   constructor(private _http:ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this._http.getPages()
     .subscribe((datas) => {
       this.getAboutFields(datas);
@@ -41,7 +41,6 @@ export class AboutComponent implements OnInit {
         this.mail = page.acf.about_mail;
         this.cv = page.acf.about_cv;
         this.contact = page.acf.about_contact;
-        console.log('this.cv',this.cv)
       }
     });
   }

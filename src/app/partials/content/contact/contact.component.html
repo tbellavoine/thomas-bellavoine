@@ -1,6 +1,39 @@
 <section>
     <div class="title">
-        <h2>Restons en contact</h2>
+        <h2>{{title}}</h2>
+        <div class="description" [innerHTML]="description"></div>
     </div>
-    test
+    <div class="contact-container row no-gutters">
+        <div class="col-12 mail-adress" *ngIf="mail">
+            <a href="mailto:{{mail}}">{{mail}}</a>
+        </div>
+        <div id="informations" class="col-12">
+            <ul>
+                <li *ngIf="facebook">
+                    <span>{{facebook['section_title']}}</span>
+                    <a href="{{facebook['link']}}" target="blank">{{facebook['title']}}</a>
+                </li>
+                <li *ngIf="twitter">
+                    <span>{{twitter['section_title']}}</span>
+                    <a href="{{twitter['link']}}" target="blank">{{twitter['title']}}</a>
+                </li>
+                <li *ngIf="linkedin">
+                    <span>{{linkedin['section_title']}}</span>
+                    <a href="{{linkedin['link']}}" target="blank">{{linkedin['title']}}</a>
+                </li>
+                <li *ngIf="whatsapp">
+                    <span>{{whatsapp['section_title']}}</span>
+                    <a href="{{whatsapp['link']}}" target="blank">{{whatsapp['title']}}</a>
+                </li>
+                <li *ngIf="github">
+                    <span>{{github['section_title']}}</span>
+                    <a href="{{github['link']}}" target="blank">{{github['title']}}</a>
+                </li>
+                <li *ngIf="adress">
+                    <span>{{adress['section_title']}}</span>
+                    <a href="https://www.google.fr/maps/place/{{adress['title']}}" target="blank">{{adress['title']}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>

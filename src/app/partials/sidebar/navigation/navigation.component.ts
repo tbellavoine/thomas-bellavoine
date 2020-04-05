@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(private _http:ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this._http.getNav()
     .subscribe((datas) => {
       this.nav = datas['items'];
