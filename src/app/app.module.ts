@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule.withServerTransition({ appId: 'thomas-bellavoine' }),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false, initialNavigation: 'enabled' } // <-- debugging purposes only
 )

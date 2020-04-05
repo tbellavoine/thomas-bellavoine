@@ -16,12 +16,11 @@ export class WorksDetailsComponent implements OnInit {
 
   constructor(private _http:ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this._http.getSkills()
       .subscribe((datas) => {
         this.getWorkSkills(datas);
     });
-    console.log('work',this.work)
   }
 
   getWorkSkills(datas){

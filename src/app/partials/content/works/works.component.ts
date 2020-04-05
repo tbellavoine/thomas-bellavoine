@@ -16,7 +16,7 @@ export class WorksComponent implements OnInit {
 
   constructor(private _http:ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this._http.getPages()
       .subscribe((datas) => {
         this.getWorksFields(datas);

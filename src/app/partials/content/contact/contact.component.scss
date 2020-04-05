@@ -3,7 +3,7 @@
 section{
     position:relative;
     min-height: 100vh;
-    padding:100px 100px 100px 250px;
+    padding:100px 50px 100px 250px;
     background:$grey2;
 
     .title{
@@ -24,6 +24,72 @@ section{
             span{
                 color:$color1;
                 font-style:italic;
+            }
+        }
+    }
+
+    .mail-adress{
+        padding:100px 20px 20px 20px;
+        a{
+            letter-spacing:5px;
+            font-size:60px;
+            &:hover{
+                text-decoration:none;
+            }
+        }
+    }
+
+    #informations{
+        padding:50px 0 0 0;
+        ul{
+            display:flex;
+            flex-wrap: wrap;
+            margin:0;
+            padding:0;
+            list-style: none;
+            li{
+                padding:20px;
+                margin:20px;
+                border:1px solid $grey;
+                span{
+                    font-weight: 700;
+                    + span,
+                    + a{
+                        position: relative;
+                        padding-left: 30px;
+                        margin-left:10px;
+                        font-weight: 200;
+                        &:before{
+                            content:"";
+                            position:absolute;
+                            top:50%;
+                            left:0;
+                            width:20px;
+                            height:1px;
+                            border-bottom:1px solid $color1;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    + a{
+                        color:$color1;
+                        text-decoration:none;
+                        &:after{
+                            content:"";
+                            position:absolute;
+                            top:100%;
+                            left:30px;
+                            width:0;
+                            height:1px;
+                            border-bottom:1px solid $color1;
+                            transition:all $animTime ease-in-out;
+                        }
+                        &:hover{
+                            &:after{
+                                width:calc(100% - 30px);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
