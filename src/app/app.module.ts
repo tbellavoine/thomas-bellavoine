@@ -19,13 +19,14 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { WorksDetailsComponent } from './partials/content/works/works-details/works-details.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NotfoundComponent } from './partials/content/notfound/notfound.component';
 
 const appRoutes: Routes = [
   { path: '', component: WelcomeComponent, data: {animation: 'HomePage'}},
   { path: 'about', component: AboutComponent, data: {animation: 'AboutPage'}},
   { path: 'works', component: WorksComponent, data: {animation: 'WorksPage'}},
   { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
-  { path: '**', component: WelcomeComponent, data: {animation: 'HomePage'}},
+  { path: '**', component: NotfoundComponent, data: {animation: 'HomePage'}},
 ];
 
 @NgModule({
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     WorksComponent,
     ContactComponent,
     FooterComponent,
-    WorksDetailsComponent
+    WorksDetailsComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'thomas-bellavoine' }),
