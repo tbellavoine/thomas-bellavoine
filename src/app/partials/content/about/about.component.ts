@@ -26,6 +26,7 @@ export class AboutComponent implements OnInit {
     .subscribe((datas) => {
       this.getAboutFields(datas);
     });
+    this.scrollTop();
   }
 
   getAboutFields(datas:any){
@@ -41,9 +42,11 @@ export class AboutComponent implements OnInit {
         this.mail = page.acf.about_mail;
         this.cv = page.acf.about_cv;
         this.contact = page.acf.about_contact;
-        console.log('this.cv',this.cv);
-        console.log('page',page);
       }
     });
+  }
+
+  scrollTop() {
+    window.scroll(0,0);
   }
 }

@@ -6,20 +6,7 @@ section{
     background:$grey2;
     min-height: 100vh;
     @include media-breakpoint-down(md) {
-        padding:50px 50px 50px 115px;
-    }
-    .title{
-        padding-left:50px;
-        border-left:2px solid $color1;
-        .description{
-            font-size:18px;
-            letter-spacing:3px;
-            line-height:35px;
-            span{
-                color:$color1;
-                font-style:italic;
-            }
-        }
+        padding:85px 20px 20px 20px;
     }
     article{
         figure{
@@ -33,11 +20,14 @@ section{
     #hexGrid {
         display: flex;
         flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
         margin: 100px 0 0 0;
         overflow: hidden;
         font-size: 15px;
         list-style-type: none;
+        @include media-breakpoint-down(md) {
+            padding-left:0;
+        }
     }
     
     .hex {

@@ -5,7 +5,8 @@ section{
     padding:100px 50px 100px 250px;
     background:$grey2;
     @include media-breakpoint-down(md) {
-        padding:50px 50px 50px 115px;
+        padding:85px 20px 20px 20px;
+        overflow-x: hidden;
     }
     #informations{
         padding:50px 0 0 0;

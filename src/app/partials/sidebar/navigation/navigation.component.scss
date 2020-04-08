@@ -8,7 +8,8 @@ ul{
         justify-content: flex-start;
         margin: 30px 0;
         a{
-            display:inline-block;
+            display:inline-flex;
+            align-items: center;
             color:$white;
             font-size:16px;
             text-transform: uppercase;
@@ -32,6 +33,7 @@ ul{
                     position: static;
                     display: inline-block;
                     margin-left:15px;
+                    margin-top: 0;
                     transform: scaleX(1);
                 }
             }

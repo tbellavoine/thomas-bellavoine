@@ -1,20 +1,22 @@
 @import "../../../../../_variables.scss";
 
 @keyframes appear {
-		from{
-				top:-100vh;
-		}
-		to{
-				top:0
-		}
+	from{
+			top:-100vh;
+	}
+	to{
+			top:0
+	}
 }
 article{
 	position:absolute;
 	top:-100vh;
 	left:165px;
+	height: 100%;
 	width: calc(100% - 155px);
 	min-height: 100vh;
 	padding:50px;
+	opacity:0;
 	z-index:100;
 	background:$black;
 	animation:appear 0.3s ease-in-out;
@@ -24,9 +26,17 @@ article{
 		width: 100%;
 		padding:0;
 		padding-bottom:100px;
+		> div{
+			order:2;
+			&#content{
+				padding:20px 0 50px 0;
+				order:1;
+			}
+		}
 	}
 	&.is-active{
-		top:0;
+		top:70px;
+		opacity:1;
 	}
 	.close-btn{
 		position: fixed;
@@ -36,7 +46,7 @@ article{
 		cursor:pointer;
 		transition:all $animTime ease-in-out;
 		@include media-breakpoint-down(md) {
-			top:20px;
+			top:90px;
 			right:20px;
 		}
 		svg{
@@ -120,15 +130,15 @@ article{
 		list-style-type: none;
 		overflow: hidden;
 		@include media-breakpoint-down(md) {
-			padding-right: 110px;
-			padding-left: 110px;
+			padding-right: 20px;
+			padding-left: 20px;
 		}
 	}
 
 	#content{
 		@include media-breakpoint-down(md) {
-			padding-right: 110px !important;
-			padding-left: 110px !important;
+			padding-right: 20px !important;
+			padding-left: 20px !important;
 		}
 	}
 		
@@ -244,24 +254,6 @@ article{
 		}
 		.hex:nth-child(7n+5){ /* first hexagon of even rows */
 			margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
-		}
-	}
-	
-	@include media-breakpoint-down(xs) {  /* <- 3-2  hexagons per row */
-		#hexGrid{
-			padding-bottom: 7.4%
-		}
-		.hex {
-			width: 33.333%; /* = 100 / 3 */
-		}
-		.hex:nth-child(11n + 8){ /* first hexagon of even rows */
-			margin-left:0;  /* = width of .hex / 2  to indent even rows */
-		}
-		.hex:nth-child(7n+5){ /* first hexagon of even rows */
-			margin-left:0;  /* = width of .hex / 2  to indent even rows */
-		}
-		.hex:nth-child(5n+4){ /* first hexagon of even rows */
-			margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
 		}
 	}
 }

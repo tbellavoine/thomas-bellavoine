@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
     .subscribe((datas) => {
       this.getContactFields(datas);
     });
+    this.scrollTop();
   }
 
   getContactFields(datas:any){
@@ -42,6 +43,10 @@ export class ContactComponent implements OnInit {
       }
       
     });
+  }
+
+  scrollTop() {
+    window.scroll(0,0);
   }
 
 }

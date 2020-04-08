@@ -21,6 +21,7 @@ export class WorksDetailsComponent implements OnInit {
       .subscribe((datas) => {
         this.getWorkSkills(datas);
     });
+    this.scrollTop();
   }
 
   getWorkSkills(datas){
@@ -35,6 +36,13 @@ export class WorksDetailsComponent implements OnInit {
 
   closeDetails(){
     this.isActive = false;
-    setTimeout(() => this.detailsClose.emit(), 300);
+    setTimeout(() => {
+      this.scrollTop();
+      this.detailsClose.emit();
+    }, 500);
+  }
+
+  scrollTop() {
+    window.scroll(0,0);
   }
 }
