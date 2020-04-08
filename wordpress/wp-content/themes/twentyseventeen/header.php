@@ -11,7 +11,8 @@
  * @since Twenty Seventeen 1.0
  * @version 1.0
  */
-
+header("Location: https://thomas-bellavoine.com/");
+exit();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>

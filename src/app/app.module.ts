@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
@@ -20,10 +21,11 @@ import { WorksDetailsComponent } from './partials/content/works/works-details/wo
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: '', component: WelcomeComponent, data: {animation: 'HomePage'}  },
-  { path: 'about', component: AboutComponent, data: {animation: 'AboutPage'}  },
-  { path: 'works', component: WorksComponent, data: {animation: 'WorksPage'} },
-  { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}   },
+  { path: '', component: WelcomeComponent, data: {animation: 'HomePage'}},
+  { path: 'about', component: AboutComponent, data: {animation: 'AboutPage'}},
+  { path: 'works', component: WorksComponent, data: {animation: 'WorksPage'}},
+  { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
+  { path: '**', component: WelcomeComponent, data: {animation: 'HomePage'}},
 ];
 
 @NgModule({
@@ -49,7 +51,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: false, initialNavigation: 'enabled' } // <-- debugging purposes only
 )
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

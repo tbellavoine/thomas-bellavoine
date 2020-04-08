@@ -25,6 +25,7 @@ export class WorksComponent implements OnInit {
       .subscribe((datas) => {
         this.works = datas;
     });
+    this.scrollTop();
   }
 
   getWorksFields(datas:any){
@@ -43,5 +44,9 @@ export class WorksComponent implements OnInit {
 
   closeDetails() {
     this.isDetails = false;
+  }
+
+  scrollTop() {
+    window.scroll(0,0);
   }
 }

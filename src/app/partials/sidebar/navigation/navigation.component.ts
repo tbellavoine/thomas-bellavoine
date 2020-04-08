@@ -24,9 +24,7 @@ export class NavigationComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    console.log('menuIconToggle',this.iconToggle)
     this.iconToggle.nativeElement.addEventListener('click', () => {
-      console.log('click');
       this.actionService.toggleMenu();
     })
   }

@@ -17,7 +17,7 @@
  * @package WordPress
  */
 
-define( 'HEADLESS_MODE_CLIENT_URL', 'http://localhost/thomas-bellavoine/' );
+define( 'HEADLESS_MODE_CLIENT_URL', 'http://google.com' );
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
