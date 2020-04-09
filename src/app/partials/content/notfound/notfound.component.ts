@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 @Component({
   selector: 'pfo-notfound',
@@ -7,8 +8,9 @@ import { Component, OnInit} from '@angular/core';
 })
 export class NotfoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loaderService:LoaderService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(){
+  }
 
 }

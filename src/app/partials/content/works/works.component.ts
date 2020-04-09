@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 @Component({
   selector: 'pfo-works',
@@ -14,7 +15,8 @@ export class WorksComponent implements OnInit {
   works:any;
   currentWork:any;
 
-  constructor(private _http:ApiService) { }
+  constructor(private _http:ApiService,
+              public loaderService:LoaderService) { }
 
   ngOnInit(){
     this._http.getPages()
@@ -24,6 +26,7 @@ export class WorksComponent implements OnInit {
     this._http.getWorks()
       .subscribe((datas) => {
         this.works = datas;
+        if (this.loaderService) this.loaderService.setLoading(false);
     });
     this.scrollTop();
   }
