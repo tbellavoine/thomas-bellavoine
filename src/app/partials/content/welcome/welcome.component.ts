@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 declare var CreateSketch : any;
 
@@ -15,12 +16,16 @@ export class WelcomeComponent implements OnInit {
   description : string;
   hexagon: any;
 
-  constructor(private _http:ApiService) {}
+  constructor(private _http:ApiService,
+              public loaderService:LoaderService) {}
 
   ngOnInit(){
     this._http.getPages()
       .subscribe((datas) => {
         this.getHomeFields(datas);
+        setTimeout(() => {
+          this.loaderService.setLoading();
+        }, 2000);
     });
   }
 

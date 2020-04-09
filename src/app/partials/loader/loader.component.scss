@@ -1,0 +1,109 @@
+ 
+@import "../../../_variables.scss";
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:$grey2;
+    z-index:9999;
+}
+.loading {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    border-radius: 50%;
+    animation: fadeIn 2s 1 ;
+    animation-fill-mode: forwards;
+    span {
+        color: $white;
+        display: block;
+        top: 100%;
+        position: absolute;
+        font-size: 1.2em;
+        width: 100%;
+        font-family: $font;
+        text-align: center;
+        color:$grey;
+        margin: 10px 0;
+        letter-spacing: 0.3em;
+      }
+  }
+    .hex{
+        position: absolute;
+        width: 30px; 
+        height: 20px;
+        background-color: $color1;
+        opacity: 1;
+        animation: fade 1.5s infinite ease;
+        opacity: 0.1;
+        &:nth-child(1) {
+            top: 10px;
+            left: 17px;
+            animation-delay: 0.1s
+        }
+        &:nth-child(2) {
+            top: 10px;
+            left: 50px;
+            animation-delay: 0.2s
+        }
+        &:nth-child(3) {
+            top: 40px;
+            left: 67px;
+            animation-delay:0.3s
+        }
+        &:nth-child(4) {
+            top: 70px;
+            left: 50px;
+            animation-delay:0.4s
+        }
+        &:nth-child(5) {
+            top: 70px;
+            left: 17px;
+            animation-delay:0.5s
+        }
+        &:nth-child(6) {
+            top: 40px;
+            left: 0;
+            animation-delay:0.6s
+        }
+        &:nth-child(7) {
+            top: 10px;
+            left: 17px;
+            animation-delay: 0.1s
+        }
+        &:before, 
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+        }
+          
+        &:before {
+        border-bottom: 8px solid $color1;
+        bottom: 100%;
+        }
+          
+        &:after {
+        width: 0; top: 100%; border-top: 8px solid $color1;
+        }
+    }   
+    
+  @keyframes fade {
+    0% { opacity: 0.5; transform:scale(1); }
+    7% { opacity: 0; transform:scale(0.2);}
+    42% { opacity: 0; transform:scale(0.2);}
+    49% { opacity: 0.5; transform:scale(1);}
+    100% { opacity: 0.5;transform:scale(1); }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }

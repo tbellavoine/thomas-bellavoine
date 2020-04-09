@@ -20,6 +20,7 @@ import { WorksDetailsComponent } from './partials/content/works/works-details/wo
 
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './partials/content/notfound/notfound.component';
+import { LoaderComponent } from './partials/loader/loader.component';
 
 const appRoutes: Routes = [
   { path: '', component: WelcomeComponent, data: {animation: 'HomePage'}},
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     ContactComponent,
     FooterComponent,
     WorksDetailsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'thomas-bellavoine' }),
