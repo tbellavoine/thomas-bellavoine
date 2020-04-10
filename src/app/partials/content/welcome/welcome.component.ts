@@ -23,9 +23,9 @@ export class WelcomeComponent implements OnInit {
     this._http.getPages()
       .subscribe((datas) => {
         this.getHomeFields(datas);
-        setTimeout(() => {
-          this.loaderService.setLoading();
-        }, 2000);
+        if (this.loaderService) {
+          this.loaderService.setLoading(false);
+        }
     });
   }
 

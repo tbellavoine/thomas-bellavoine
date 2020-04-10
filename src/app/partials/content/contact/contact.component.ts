@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
+import { LoaderService } from '../../../shared/services/loader.service';
 
 @Component({
   selector: 'pfo-contact',
@@ -18,12 +19,14 @@ export class ContactComponent implements OnInit {
   github : string;
   adress : string;
 
-  constructor(private _http:ApiService) { }
+  constructor(private _http:ApiService,
+              public loaderService:LoaderService) { }
 
   ngOnInit() {
     this._http.getPages()
     .subscribe((datas) => {
       this.getContactFields(datas);
+      if (this.loaderService) this.loaderService.setLoading(false);
     });
     this.scrollTop();
   }

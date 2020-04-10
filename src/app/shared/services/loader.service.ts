@@ -9,17 +9,20 @@ export class LoaderService {
 
   constructor() { }
 
-  setLoading(){
+  setLoading(load:boolean){
     if (this.isLoading){
       document.getElementById('loader').animate([
         { opacity: 1 }, 
         { opacity: 0 }
       ], { 
-        duration: 1000,
+        duration: 300,
       });
+      setTimeout(() => {  
+        this.isLoading = load;
+      }, 200);
+    }else{
+      this.isLoading = load;
     }
-    setTimeout(() => {  
-      this.isLoading = !this.isLoading;
-    }, 1000);
+   
   }
 }
