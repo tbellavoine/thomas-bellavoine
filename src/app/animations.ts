@@ -2,7 +2,7 @@ import { animate,query, style, transition, trigger, group, animateChild} from '@
   
 export const slideInAnimation =
    trigger('routeAnimations', [
-        transition('ContactPage => *, AboutPage => HomePage, WorksPage => AboutPage , WorksPage => HomePage , NewsPage => WorksPage, NewsPage => AboutPage, NewsPage => HomePage', [
+        transition('ContactPage => * , * => HomePage, WorksPage => AboutPage , SandboxPage => WorksPage, SandboxPage => AboutPage' , [
              query(':enter, :leave', 
                   style({ position: 'fixed', width: '100%', 'transform-origin': '50% 50%'  }), 
                   { optional: true }),        
@@ -20,7 +20,7 @@ export const slideInAnimation =
                   ], { optional: true }),
              ])
         ]),
-        transition('HomePage => *, AboutPage => WorksPage , AboutPage => ContactPage , AboutPage => NewsPage , WorksPage => NewsPage , WorksPage => ContactPage , NewsPage => ContactPage', [
+        transition('HomePage => * , * => ContactPage , AboutPage => WorksPage , AboutPage => SandboxPage, WorksPage => SandboxPage', [
              query(':enter, :leave', 
                   style({ position: 'fixed',  width: '100%', 'transform-origin': '50% 50%'}), 
                   { optional: true }),
