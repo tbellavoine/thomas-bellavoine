@@ -1,0 +1,20 @@
+<section>
+    <div class="title">
+        <h2>{{title}}</h2>
+        <div class="description">
+            <p [innerHTML]="description"></p>
+        </div>
+    </div>
+    <ul id="hexGrid">
+        <li *ngFor="let playground of playgrounds" class="hex">
+          <div class="hexIn">
+            <a class="hexLink" (click)="openDetails(playground)">
+              <img *ngIf="playground.better_featured_image" src="{{playground.better_featured_image.source_url}}" alt="{{playground.better_featured_image.alt}}" />
+              <h2>{{playground.title.rendered}}</h2>
+              <p [innerHTML]="playground.excerpt.rendered"></p>
+            </a>
+          </div>
+        </li>
+    </ul>
+    <pfo-sandbox-details *ngIf="isDetails" (detailsClose)="closeDetails()" [playground]="currentPlayground"></pfo-sandbox-details>
+</section>

@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
@@ -17,15 +18,16 @@ import { WorksComponent } from './partials/content/works/works.component';
 import { ContactComponent } from './partials/content/contact/contact.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { WorksDetailsComponent } from './partials/content/works/works-details/works-details.component';
-
-import { HttpClientModule } from '@angular/common/http';
+import { SandboxComponent } from './partials/content/sandbox/sandbox.component';
 import { NotfoundComponent } from './partials/content/notfound/notfound.component';
 import { LoaderComponent } from './partials/loader/loader.component';
+import { SandboxDetailsComponent } from './partials/content/sandbox/sandbox-details/sandbox-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: WelcomeComponent, data: {animation: 'HomePage'}},
   { path: 'about', component: AboutComponent, data: {animation: 'AboutPage'}},
   { path: 'works', component: WorksComponent, data: {animation: 'WorksPage'}},
+  { path: 'sandbox', component: SandboxComponent, data: {animation: 'SandboxPage'}},
   { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
   { path: '**', component: NotfoundComponent, data: {animation: 'HomePage'}},
 ];
@@ -45,7 +47,9 @@ const appRoutes: Routes = [
     FooterComponent,
     WorksDetailsComponent,
     NotfoundComponent,
-    LoaderComponent
+    LoaderComponent,
+    SandboxComponent,
+    SandboxDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'thomas-bellavoine' }),
