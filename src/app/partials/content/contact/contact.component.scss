@@ -23,6 +23,7 @@ section{
             }
             @include media-breakpoint-down(xs) {
                 font-size:16px;
+                letter-spacing:3px;
                 word-break: break-all;
             }
             &:hover{
